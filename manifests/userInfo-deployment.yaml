@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: userInfo-backend
+  name: userinfo-backend
   namespace: default
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: userInfo-backend
+      app: userinfo-backend
   template:
     metadata:
       labels:
-        app: userInfo-backend
+        app: userinfo-backend
     spec:
       containers:
-        - name: userInfo-backend
-          image: 811288377093.dkr.ecr.us-west-2.amazonaws.com/userInfo-backend:latest
+        - name: userinfo-backend
+          image: 811288377093.dkr.ecr.us-west-2.amazonaws.com/userinfo-backend:latest
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
