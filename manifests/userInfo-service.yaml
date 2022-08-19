@@ -2,12 +2,12 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: userInfo-backend
+  name: userinfo-backend
   annotations:
-    alb.ingress.kubernetes.io/healthcheck-path: "/userInfos"
+    alb.ingress.kubernetes.io/healthcheck-path: "/userinfoes"
 spec:
   selector:
-    app:  userInfo-backend
+    app:  userinfo-backend
   type: NodePort
   ports:
     - port: 8080
