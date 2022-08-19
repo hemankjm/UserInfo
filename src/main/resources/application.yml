@@ -43,3 +43,5 @@ logging:
       type.descriptor.sql: trace #show parameter binding
       SQL: DEBUG
     org.springframework.cloud: debug
+jwt:
+  secret: cGV0ZnJpZW5kcyBpcyBnb29kIHN5c3RlbS4g7KCE7JuQIO2Vqeqyqe2VmOyLnOq4sOulvCA=    
