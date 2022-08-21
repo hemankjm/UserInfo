@@ -44,12 +44,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
       return new BCryptPasswordEncoder();
   }
 
-  // h2 database 테스트가 원활하도록 관련 API 들은 전부 무시
-  @Override
-  public void configure(WebSecurity web) {
-      web.ignoring()
-          .antMatchers("/h2-console/**", "/favicon.ico");
-  }
+  // h2 database 테스트가 원활하도록 관련 API 들은 전부 무시   ????
+//   @Override
+//   public void configure(WebSecurity web) {
+//       web.ignoring()
+//           .antMatchers("/h2-console/**", "/favicon.ico");
+//   }
 
   @Override
   protected void configure(HttpSecurity http) throws Exception {
@@ -61,7 +61,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter{
           .authenticationEntryPoint(jwtAuthenticationEntryPoint)
           .accessDeniedHandler(jwtAccessDeniedHandler)
 
-          // h2-console 을 위한 설정을 추가
+          // h2-console 을 위한 설정을 추가  ????
           .and()
           .headers()
           .frameOptions()

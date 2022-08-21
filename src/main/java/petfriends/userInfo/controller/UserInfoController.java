@@ -2,30 +2,46 @@ package petfriends.userInfo.controller;
 
 import java.util.List;
 
+import petfriends.userInfo.dto.UserInfoResponseDto;
+import petfriends.userInfo.model.UserInfo;
+import petfriends.userInfo.service.UserInfoService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import petfriends.userInfo.model.UserInfo;
-import petfriends.userInfo.service.UserInfoService;
-
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+import lombok.RequiredArgsConstructor;
 
  @RestController
- @RequestMapping("/")
+ @RequiredArgsConstructor
+ @RequestMapping("/userInfo")
  public class UserInfoController {
 
-	 @Autowired
-	 UserInfoService userInfoService;
+		private final UserInfoService userInfoService;
 
 
-	 @GetMapping("/userInfos/{userId}")
-	 public List<UserInfo> findUserInfoByUserId(@PathVariable("userId") Long userId) {
-		 return userInfoService.findAllByUserId(userId);
-	 }
+		@GetMapping("/me")
+    public ResponseEntity<UserInfoResponseDto> getMyMemberInfo() {
+        return ResponseEntity.ok(userInfoService.getMyInfo());
+    }
 
+    @GetMapping("/{userId}")
+    public ResponseEntity<UserInfoResponseDto> getMemberInfo(@PathVariable String userId) {
+        return ResponseEntity.ok(userInfoService.getUserInfo(userId));
+    }
+
+	//  @GetMapping("/me")
+	//  public List<UserInfo> findUserInfoByUserId(@PathVariable("userId") Long userId) {
+	// 	 return userInfoService.findAllByUserId(userId);
+	//  }
+
+	//  @GetMapping("/{userId}")
+	//  public List<UserInfo> findUserInfoByUserId(@PathVariable("userId") Long userId) {
+	// 	 return userInfoService.findAllByUserId(userId);
+	//  }
 
  }
 

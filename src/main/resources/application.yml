@@ -52,7 +52,7 @@ api:
     payment: http://localhost:8084
 
 jwt:
-  secret: cGV0ZnJpZW5kcyBpcyBnb29kIHN5c3RlbS4g7KCE7JuQIO2Vqeqyqe2VmOyLnOq4sOulvCA=
+  secret: bHYz66W8IOychO2VnCBwZXRmcmllbmRzIOydhCDrp4zrk6Tsl4jsirXri4jri6QuIOuqqOuRkCDrqqjrkZAg7Je07Ius7Z6IIO2VmOyFlOyEnCDsoITsm5Ag7ZWp6rKpIO2VmOuKlCDsoovsnYAg6rKw6rO86rCAIOyeiOq4sOulvCDquLDsm5Dtlanri4jri6QubHYz66W8IOychO2VnCBwZXRmcmllbmRzIOydhCDrp4zrk6Tsl4jsirXri4jri6QuIA==
 ---
 
 spring:
@@ -86,6 +86,7 @@ spring:
                   serde: org.apache.kafka.common.serialization.Serdes$StringSerde
       bindings:
         event-in:
+
           group: Reservation
           destination: petfriends
           contentType: application/json
@@ -107,4 +108,4 @@ api:
     dogwalkerSchedule: http://dogwalkerSchedule-backend:8080
 
 jwt:
-  secret: cGV0ZnJpZW5kcyBpcyBnb29kIHN5c3RlbS4g7KCE7JuQIO2Vqeqyqe2VmOyLnOq4sOulvCA=
+  secret: bHYz66W8IOychO2VnCBwZXRmcmllbmRzIOydhCDrp4zrk6Tsl4jsirXri4jri6QuIOuqqOuRkCDrqqjrkZAg7Je07Ius7Z6IIO2VmOyFlOyEnCDsoITsm5Ag7ZWp6rKpIO2VmOuKlCDsoovsnYAg6rKw6rO86rCAIOyeiOq4sOulvCDquLDsm5Dtlanri4jri6QubHYz66W8IOychO2VnCBwZXRmcmllbmRzIOydhCDrp4zrk6Tsl4jsirXri4jri6QuIA==
