@@ -26,8 +26,6 @@ public class AuthService {
 
     @Transactional
     public UserInfoResponseDto signup(UserInfoRequestDto userInfoRequestDto) {
-      System.out.println("3333333333333333");
-
 
         if (userInfoRepository.existsByUserId(userInfoRequestDto.getUserId())) {
             throw new RuntimeException("이미 가입되어 있는 유저입니다");

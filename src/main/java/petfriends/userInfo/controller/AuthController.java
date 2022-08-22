@@ -24,9 +24,6 @@ public class AuthController {
 
     @PostMapping("/signup")
     public ResponseEntity<UserInfoResponseDto> signup(@RequestBody UserInfoRequestDto userInfoRequestDto) {
-      System.out.println("1111111111111111111");
-
-
         return ResponseEntity.ok(authService.signup(userInfoRequestDto));
     }
 
