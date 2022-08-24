@@ -37,6 +37,8 @@ public class UserInfoService {
 								.orElseThrow(() -> new RuntimeException("로그인 유저 정보가 없습니다."));
 		}
 
+
+
 	//  @Autowired
 	//  UserInfoRepository userInfoRepository;
 

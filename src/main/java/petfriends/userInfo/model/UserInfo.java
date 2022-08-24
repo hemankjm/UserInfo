@@ -12,8 +12,9 @@ import javax.persistence.*;
 import lombok.*;
 
 
-@Getter
+// @Getter
 @Entity
+@Data
 @DynamicUpdate
 @NoArgsConstructor
 @Table(name="userInfo")
@@ -24,20 +25,16 @@ public class UserInfo {
     private String userId;
 		private String password;
 		// @Column(nullable = false, length = 50)
-    // private String userName;
-    // private String telNo;
-		// private Double pintAmount;
-		// private Double useCount;
-
-    // @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss.S")
-    // private Timestamp loginTime;
-    // @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss.S")
-    // private Timestamp logoutTime;
-
-		// @Column(nullable = false, unique = false)
-    // private String encryptedPwd;
-		// @Transient
-    // private String password;
+    private String userNm;
+    private String telNo;
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss.S")
+    private Timestamp loginTime;
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss.S")
+    private Timestamp logoutTime;
+		private Double pointAmount;
+		private Double useCount;
+    private Double career;
+    private Double avgScore;
 
 		@Column
     @Enumerated(EnumType.STRING)
@@ -45,10 +42,13 @@ public class UserInfo {
 
 
 	@Builder
-	public UserInfo(String userId, String password, UserRole userRole) {
+	public UserInfo(String userId, String password, UserRole userRole, String userNm, String telNo, Double pointAmount) {
 			this.userId = userId;
 			this.password = password;
 			this.userRole = userRole;
+      this.userNm   = userNm;
+      this.telNo    = telNo;
+      this.pointAmount = pointAmount;
 	}
 
   // @PrePersist

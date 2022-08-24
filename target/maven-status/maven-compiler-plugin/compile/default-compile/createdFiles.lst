@@ -15,6 +15,7 @@ petfriends\userInfo\model\UserRole.class
 petfriends\config\SecurityUtil.class
 petfriends\userInfo\controller\UserInfoController.class
 petfriends\config\WebConfig.class
+petfriends\userInfo\dto\PointChanged.class
 petfriends\userInfo\service\AuthService.class
 petfriends\AbstractEvent.class
 petfriends\userInfo\dto\TokenDto$TokenDtoBuilder.class

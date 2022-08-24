@@ -5,14 +5,16 @@
 
 테이블생성 Script: create table user_info (
        user_id varchar(255) not null,
-        encrypted_pwd varchar(255) not null,
+        avg_score double precision,
+        career double precision,
         login_time datetime(6),
         logout_time datetime(6),
         password varchar(255),
-        pint_amount double precision,
+        point_amount double precision,
         tel_no varchar(255),
         use_count double precision,
-        user_name varchar(50) not null,
+        user_nm varchar(255),
+        user_role varchar(255),
         primary key (user_id)
     ) engine=InnoDB
 ;

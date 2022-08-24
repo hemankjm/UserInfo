@@ -14,12 +14,17 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 public class UserInfoRequestDto {
   private String userId;
   private String password;
+  private String userNm;
+  private String telNo;
 
   public UserInfo toUserInfo(PasswordEncoder passwordEncoder) {
       return UserInfo.builder()
               .userId(userId)
               .password(passwordEncoder.encode(password))
               .userRole(UserRole.ROLE_USER)
+              .userNm(userNm)
+              .telNo(telNo)
+              .pointAmount((double)0)
               .build();
   }
 

@@ -1,10 +1,17 @@
 package petfriends;
 
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.stream.annotation.StreamListener;
 import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.stereotype.Service;
 
 import petfriends.config.KafkaProcessor;
+
+import petfriends.userInfo.dto.PointChanged;
+import petfriends.userInfo.model.UserInfo;
+import petfriends.userInfo.repository.UserInfoRepository;
 
 @Service
 public class PolicyHandler{
@@ -14,22 +21,21 @@ public class PolicyHandler{
 
     }
 
-    // @StreamListener(KafkaProcessor.INPUT)
-    // public void wheneverWalkEnded_(@Payload WalkEnded walkEnded){
+    @Autowired
+    UserInfoRepository userInfoRepository;
 
-    // 	if(walkEnded.isMe()){
-    //         System.out.println("######## listener  : " + walkEnded.toJson());
+    @StreamListener(KafkaProcessor.INPUT)
+    public void wheneverPointChanged_(@Payload PointChanged pointChanged){
 
-    //         //List<UserInfo> list = userInfoRepository.findByOrderId(orderCancelled.getId()); // mariadb  추가하면서 주석
+    	if(pointChanged.isMe()){
+            System.out.println("######## pointChanged listener  : " + pointChanged.toJson());
 
-    //         //for(UserInfo userInfo : list){
-    //         	// userInfo.setCancelYn("Y"); // 테이블 변경하면서 주석처리 2202.06.27
-    //             // view 객체에 이벤트의 eventDirectValue 를 set 함
-    //             // view 레파지 토리에 save
-    //         //	userInfoRepository.save(userInfo);
-    //         //}
+            Optional<UserInfo> userInfoOptional = userInfoRepository.findByUserId(pointChanged.getUserId());
+            UserInfo userInfo = userInfoOptional.get();
+            userInfo.setPointAmount(userInfo.getPointAmount() + pointChanged.getPoint()); // 포인트 갱신
+            userInfoRepository.save(userInfo);
 
-    //     }
-    // }
+        }
+    }
 
 }
