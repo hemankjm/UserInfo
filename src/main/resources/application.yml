@@ -74,7 +74,7 @@ spring:
     stream:
       kafka:
         binder:
-          brokers: my-kafka.kafka.svc.cluster.local:9092
+          brokers: ${HOST_NAME}:9092
         streams:
           binder:
             configuration:
@@ -85,8 +85,7 @@ spring:
                   serde: org.apache.kafka.common.serialization.Serdes$StringSerde
       bindings:
         event-in:
-
-          group: Reservation
+          group: UserInfo
           destination: petfriends
           contentType: application/json
         event-out:
