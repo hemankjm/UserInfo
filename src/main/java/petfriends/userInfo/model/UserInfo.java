@@ -35,6 +35,7 @@ public class UserInfo {
 		private Double useCount;
     private Double career;
     private Double avgScore;
+    private Double walkCount;
 
 		@Column
     @Enumerated(EnumType.STRING)
@@ -42,14 +43,23 @@ public class UserInfo {
 
 
 	@Builder
-	public UserInfo(String userId, String password, UserRole userRole, String userNm, String telNo, Double pointAmount) {
+	public UserInfo(String userId, String password, UserRole userRole, String userNm, String telNo) {
 			this.userId = userId;
 			this.password = password;
 			this.userRole = userRole;
       this.userNm   = userNm;
       this.telNo    = telNo;
-      this.pointAmount = pointAmount;
 	}
+
+
+  @PrePersist
+  public void prePersist(){
+      // this.pointAmount = this.pointAmount == null ? (double)0 : this.pointAmount;
+      // this.useCount = this.useCount == null ? (double)0 : this.useCount;
+      // this.career = this.career == null ? (double)0 : this.career;
+      // this.avgScore = this.avgScore == null ? (double)0 : this.avgScore;
+      // this.walkCount = this.walkCount == null ? (double)0 : this.walkCount;
+  }
 
   // @PrePersist
   //   public void time() {

@@ -18,6 +18,8 @@ C:\workspace\PetFriends\UserInfo\src\main\java\petfriends\userInfo\repository\Us
 C:\workspace\PetFriends\UserInfo\src\main\java\petfriends\userInfo\dto\UserInfoRequestDto.java
 C:\workspace\PetFriends\UserInfo\src\main\java\petfriends\config\KafkaProcessor.java
 C:\workspace\PetFriends\UserInfo\src\main\java\petfriends\PolicyHandler.java
+C:\workspace\PetFriends\UserInfo\src\main\java\petfriends\userInfo\model\SmsStatus.java
+C:\workspace\PetFriends\UserInfo\src\main\java\petfriends\userInfo\dto\WalkEnded.java
 C:\workspace\PetFriends\UserInfo\src\main\java\petfriends\userInfo\dto\TokenDto.java
 C:\workspace\PetFriends\UserInfo\src\main\java\petfriends\userInfo\jwt\JwtAccessDeniedHandler.java
 C:\workspace\PetFriends\UserInfo\src\main\java\petfriends\userInfo\model\UserInfo.java

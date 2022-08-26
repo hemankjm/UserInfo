@@ -4,6 +4,7 @@ petfriends\config\KafkaProcessor.class
 petfriends\userInfo\repository\UserInfoRepository.class
 petfriends\userInfo\dto\UserInfoDto.class
 petfriends\userInfo\dto\StarScoreGranted.class
+petfriends\userInfo\model\SmsStatus.class
 petfriends\config\WebSecurityConfig.class
 petfriends\userInfo\jwt\TokenProvider.class
 petfriends\AbstractEvent$1.class
@@ -18,6 +19,7 @@ petfriends\config\SecurityUtil.class
 petfriends\userInfo\controller\UserInfoController.class
 petfriends\config\WebConfig.class
 petfriends\userInfo\dto\PointChanged.class
+petfriends\userInfo\dto\WalkEnded.class
 petfriends\userInfo\service\AuthService.class
 petfriends\AbstractEvent.class
 petfriends\userInfo\dto\TokenDto$TokenDtoBuilder.class

@@ -24,7 +24,7 @@ public class UserInfoRequestDto {
               .userRole(UserRole.ROLE_USER)
               .userNm(userNm)
               .telNo(telNo)
-              .pointAmount((double)0)
+              // .pointAmount((double)0)
               .build();
   }
 
