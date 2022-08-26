@@ -8,6 +8,7 @@ C:\workspace\PetFriends\UserInfo\src\main\java\petfriends\userInfo\controller\Au
 C:\workspace\PetFriends\UserInfo\src\main\java\petfriends\AbstractEvent.java
 C:\workspace\PetFriends\UserInfo\src\main\java\petfriends\userInfo\dto\PointChanged.java
 C:\workspace\PetFriends\UserInfo\src\main\java\petfriends\userInfo\service\AuthService.java
+C:\workspace\PetFriends\UserInfo\src\main\java\petfriends\userInfo\model\WalkingPlace.java
 C:\workspace\PetFriends\UserInfo\src\main\java\petfriends\config\WebSecurityConfig.java
 C:\workspace\PetFriends\UserInfo\src\main\java\petfriends\userInfo\jwt\JwtFilter.java
 C:\workspace\PetFriends\UserInfo\src\main\java\petfriends\config\JwtSecurityConfig.java
@@ -21,6 +22,7 @@ C:\workspace\PetFriends\UserInfo\src\main\java\petfriends\userInfo\dto\TokenDto.
 C:\workspace\PetFriends\UserInfo\src\main\java\petfriends\userInfo\jwt\JwtAccessDeniedHandler.java
 C:\workspace\PetFriends\UserInfo\src\main\java\petfriends\userInfo\model\UserInfo.java
 C:\workspace\PetFriends\UserInfo\src\main\java\petfriends\userInfo\jwt\TokenProvider.java
+C:\workspace\PetFriends\UserInfo\src\main\java\petfriends\userInfo\dto\StarScoreGranted.java
 C:\workspace\PetFriends\UserInfo\src\main\java\petfriends\config\WebConfig.java
 C:\workspace\PetFriends\UserInfo\src\main\java\petfriends\config\SecurityUtil.java
 C:\workspace\PetFriends\UserInfo\src\main\java\petfriends\userInfo\service\RefreshTokenRepository.java

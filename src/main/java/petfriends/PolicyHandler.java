@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import petfriends.config.KafkaProcessor;
 
 import petfriends.userInfo.dto.PointChanged;
+import petfriends.userInfo.dto.StarScoreGranted;
 import petfriends.userInfo.model.UserInfo;
 import petfriends.userInfo.repository.UserInfoRepository;
 
@@ -33,6 +34,21 @@ public class PolicyHandler{
             Optional<UserInfo> userInfoOptional = userInfoRepository.findByUserId(pointChanged.getUserId());
             UserInfo userInfo = userInfoOptional.get();
             userInfo.setPointAmount(userInfo.getPointAmount() + pointChanged.getPoint()); // 포인트 갱신
+            userInfoRepository.save(userInfo);
+
+        }
+    }
+
+
+    @StreamListener(KafkaProcessor.INPUT)
+    public void wheneverStarScoreGranted_(@Payload StarScoreGranted starScoreGranted){
+
+    	if(starScoreGranted.isMe()){
+            System.out.println("######## starScoreGranted listener  : " + starScoreGranted.toJson());
+
+            Optional<UserInfo> userInfoOptional = userInfoRepository.findByUserId(starScoreGranted.getUserId());
+            UserInfo userInfo = userInfoOptional.get();
+            userInfo.setAvgScore((double)starScoreGranted.getStarScore()); // 평점 갱신
             userInfoRepository.save(userInfo);
 
         }

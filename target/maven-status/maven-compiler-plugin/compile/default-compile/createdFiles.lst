@@ -3,6 +3,7 @@ petfriends\PolicyHandler.class
 petfriends\config\KafkaProcessor.class
 petfriends\userInfo\repository\UserInfoRepository.class
 petfriends\userInfo\dto\UserInfoDto.class
+petfriends\userInfo\dto\StarScoreGranted.class
 petfriends\config\WebSecurityConfig.class
 petfriends\userInfo\jwt\TokenProvider.class
 petfriends\AbstractEvent$1.class
@@ -10,6 +11,7 @@ petfriends\userInfo\service\RefreshTokenRepository.class
 petfriends\userInfo\jwt\JwtAuthenticationEntryPoint.class
 petfriends\userInfo\dto\UserInfoRequestDto.class
 petfriends\userInfo\dto\TokenRequestDto.class
+petfriends\userInfo\model\WalkingPlace.class
 petfriends\userInfo\service\CustomUserDetailsService.class
 petfriends\userInfo\model\UserRole.class
 petfriends\config\SecurityUtil.class
