@@ -1,6 +1,7 @@
 package petfriends.userInfo.service;
 
 import petfriends.config.SecurityUtil;
+import petfriends.userInfo.dto.UserInfoDto;
 import petfriends.userInfo.dto.UserInfoResponseDto;
 import petfriends.userInfo.model.UserInfo;
 import petfriends.userInfo.repository.UserInfoRepository;
@@ -21,13 +22,9 @@ import lombok.RequiredArgsConstructor;
 public class UserInfoService {
 
 		private final UserInfoRepository userInfoRepository;
+		// @Autowired
+	  // UserInfoRepository userInfoRepository;
 
-		@Transactional /* (readOnly = true) */
-		public UserInfoResponseDto getUserInfo(String userId) {
-				return userInfoRepository.findByUserId(userId)
-								.map(UserInfoResponseDto::of)
-								.orElseThrow(() -> new RuntimeException("유저 정보가 없습니다."));
-		}
 
 		// 현재 SecurityContext 에 있는 유저 정보 가져오기
 		@Transactional /* (readOnly = true) */
@@ -36,6 +33,24 @@ public class UserInfoService {
 								.map(UserInfoResponseDto::of)
 								.orElseThrow(() -> new RuntimeException("로그인 유저 정보가 없습니다."));
 		}
+
+
+		@Transactional /* (readOnly = true) */
+		public UserInfoResponseDto getUserInfo(String userId) {
+				return userInfoRepository.findByUserId(userId)
+								.map(UserInfoResponseDto::of)
+								.orElseThrow(() -> new RuntimeException("유저 정보가 없습니다."));
+		}
+
+    //사용자 전체 정보 반환
+		public UserInfo getMyUserInfo(String userId) {
+				Optional<UserInfo> userInfo = userInfoRepository.findByUserId(userId);
+				return  userInfo.get();
+		}
+
+}
+
+
 
 
 
@@ -56,5 +71,5 @@ public class UserInfoService {
 	//  }
 
 
-}
+
 
