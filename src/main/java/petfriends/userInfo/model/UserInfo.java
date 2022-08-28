@@ -54,11 +54,11 @@ public class UserInfo {
 
   @PrePersist
   public void prePersist(){
-      // this.pointAmount = this.pointAmount == null ? (double)0 : this.pointAmount;
-      // this.useCount = this.useCount == null ? (double)0 : this.useCount;
-      // this.career = this.career == null ? (double)0 : this.career;
-      // this.avgScore = this.avgScore == null ? (double)0 : this.avgScore;
-      // this.walkCount = this.walkCount == null ? (double)0 : this.walkCount;
+      this.pointAmount = this.pointAmount == null ? (double)0 : this.pointAmount;
+      this.useCount = this.useCount == null ? (double)0 : this.useCount;
+      this.career = this.career == null ? (double)0 : this.career;
+      this.avgScore = this.avgScore == null ? (double)0 : this.avgScore;
+      this.walkCount = this.walkCount == null ? (double)0 : this.walkCount;
   }
 
   // @PrePersist
