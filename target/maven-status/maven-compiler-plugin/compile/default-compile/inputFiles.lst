@@ -23,6 +23,8 @@ C:\workspace\PetFriends\UserInfo\src\main\java\petfriends\userInfo\dto\WalkEnded
 C:\workspace\PetFriends\UserInfo\src\main\java\petfriends\userInfo\dto\TokenDto.java
 C:\workspace\PetFriends\UserInfo\src\main\java\petfriends\userInfo\jwt\JwtAccessDeniedHandler.java
 C:\workspace\PetFriends\UserInfo\src\main\java\petfriends\userInfo\model\UserInfo.java
+C:\workspace\PetFriends\UserInfo\src\main\java\petfriends\userInfo\model\UserImage.java
+C:\workspace\PetFriends\UserInfo\src\main\java\petfriends\userInfo\repository\UserImageRepository.java
 C:\workspace\PetFriends\UserInfo\src\main\java\petfriends\userInfo\jwt\TokenProvider.java
 C:\workspace\PetFriends\UserInfo\src\main\java\petfriends\userInfo\dto\StarScoreGranted.java
 C:\workspace\PetFriends\UserInfo\src\main\java\petfriends\config\WebConfig.java
