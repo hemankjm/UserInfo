@@ -39,7 +39,7 @@ public class PolicyHandler{
 
             Optional<UserInfo> userInfoOptional = userInfoRepository.findByUserId(pointChanged.getUserId());
             UserInfo userInfo = userInfoOptional.get();
-            userInfo.setPointAmount(userInfo.getPointAmount() + pointChanged.getPoint()); // 포인트 갱신
+            userInfo.setPointAmount(pointChanged.getPoint()); // 포인트 갱신
             userInfoRepository.save(userInfo);
 
         }
