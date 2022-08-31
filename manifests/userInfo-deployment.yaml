@@ -8,11 +8,11 @@ spec:
   selector:
     matchLabels:
       app: userinfo-backend
-  # strategy:
-  #   type: RollingUpdate
-  #   rollingUpdate:
-  #     maxSurge: 3
-  #     maxUnavailable: 3
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 3
+      maxUnavailable: 3
   template:
     metadata:
       labels:
