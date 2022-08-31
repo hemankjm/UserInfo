@@ -4,15 +4,15 @@ metadata:
   name: userinfo-backend
   namespace: default
 spec:
-  replicas: 4
+  replicas: 3
   selector:
     matchLabels:
       app: userinfo-backend
-  strategy:
-    type: RollingUpdate
-    rollingUpdate:
-      maxSurge: 3
-      maxUnavailable: 3
+  # strategy:
+  #   type: RollingUpdate
+  #   rollingUpdate:
+  #     maxSurge: 3
+  #     maxUnavailable: 3
   template:
     metadata:
       labels:
