@@ -36,8 +36,8 @@ phases:
       - AWS_ECR_URI=$AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_REPO_NAME:$IMAGE_TAG
       - DATE='date'
       - echo Build completed on $DATE
-      - sed -i.bak 's#AWS_ECR_URI#'"$AWS_ECR_URI"'#' ./manifests/userinfo-deployment.yaml
-      - sed -i.bak 's#DATE_STRING#'"$DATE"'#' ./manifests/userinfo-deployment.yaml
-      - kubectl apply -f ./manifests/userinfo-deployment.yaml
-      - kubectl apply -f ./manifests/userinfo-service.yaml
-      #- kubectl apply -f ./manifests/userinfo-ingress.yaml
+      - sed -i.bak 's#AWS_ECR_URI#'"$AWS_ECR_URI"'#' ./manifests/userInfo-deployment.yaml
+      - sed -i.bak 's#DATE_STRING#'"$DATE"'#' ./manifests/userInfo-deployment.yaml
+      - kubectl apply -f ./manifests/userInfo-deployment.yaml
+      - kubectl apply -f ./manifests/userInfo-service.yaml
+      #- kubectl apply -f ./manifests/userInfo-ingress.yaml
