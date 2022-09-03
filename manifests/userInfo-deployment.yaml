@@ -24,11 +24,11 @@ spec:
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
-          # readinessProbe:
-          #   exec:
-          #     command:
-          #     - cat
-          #     - /tmp/healthy
+          readinessProbe:
+            exec:
+              command:
+              - cat
+              - /tmp/healthy
             # httpGet:
             #   path: '/'
             #   port: 8080
