@@ -12,7 +12,7 @@ spec:
     type: RollingUpdate
     rollingUpdate:
       maxSurge: 3
-      maxUnavailable: 3
+      maxUnavailable: 2
   template:
     metadata:
       labels:
@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
         - name: userinfo-backend
-          image: 811288377093.dkr.ecr.us-west-2.amazonaws.com/userinfo-backend:v3
+          image: 811288377093.dkr.ecr.us-west-2.amazonaws.com/userinfo-backend:v4
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
