@@ -20,10 +20,14 @@ spec:
     spec:
       containers:
         - name: userinfo-backend
-          image: 811288377093.dkr.ecr.us-west-2.amazonaws.com/userinfo-backend:v6
+          image: 811288377093.dkr.ecr.us-west-2.amazonaws.com/userinfo-backend:latest
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
+          readinessProbe:
+            httpGet:
+              path: /readiness
+              port: 8080
           env:
             - name: DATE
               value: 'DATE_STRING'
