@@ -26,9 +26,9 @@ spec:
             - containerPort: 8080
           readinessProbe:
             exec:
-            command:
-            - cat
-            - /tmp/healthy
+              command:
+              - cat
+              - /tmp/healthy
             # httpGet:
             #   path: '/'
             #   port: 8080
