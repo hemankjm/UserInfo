@@ -34,9 +34,7 @@ import lombok.RequiredArgsConstructor;
  public class UserInfoController {
 
 		private final UserInfoService userInfoService;
-
-		@Autowired
-		UserImageRepository userImageRepository;
+		private final UserImageRepository userImageRepository;
 
 		@GetMapping("/me")
     public ResponseEntity<UserInfoResponseDto> getMyMemberInfo() {
@@ -58,30 +56,30 @@ import lombok.RequiredArgsConstructor;
 
 
 		@PostMapping("/image/upload")
-		public Long handleFileUpload(HttpServletRequest request) throws IOException {
+		public Long uploadUserImage(HttpServletRequest request) throws IOException {
 
-			  MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
-				MultipartFile file = multipartRequest.getFile("file");
+			  // MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
+				// MultipartFile file = multipartRequest.getFile("file");
 
-				// System.out.println("file name ======= " + file.getOriginalFilename());
-				// System.out.println("userid ======= " + multipartRequest.getParameter("user_id"));
+				// // System.out.println("file name ======= " + file.getOriginalFilename());
+				// // System.out.println("userid ======= " + multipartRequest.getParameter("user_id"));
 
-			  LocalDateTime current = LocalDateTime.now();
+			  // LocalDateTime current = LocalDateTime.now();
 
-				UserImage userImage = new UserImage();
-				userImage.setMimeType(file.getContentType());
-				userImage.setOriginalName(file.getOriginalFilename());
-				userImage.setUserImage(file.getBytes());
-				userImage.setCreateDate(java.sql.Timestamp.valueOf(current));
+				// UserImage userImage = new UserImage();
+				// userImage.setMimeType(file.getContentType());
+				// userImage.setOriginalName(file.getOriginalFilename());
+				// userImage.setUserImage(file.getBytes());
+				// userImage.setCreateDate(java.sql.Timestamp.valueOf(current));
 
-				UserImage saveUuserImg =  userImageRepository.save(userImage);
+				// UserImage saveUuserImg =  userImageRepository.save(userImage)
 
-				return saveUuserImg.getId();
+				return userInfoService.uploadUserImage(request);
 		}
 
 
 		@GetMapping("/image/{id}")
-		public ResponseEntity<byte[]> findOne(@PathVariable Long id) {
+		public ResponseEntity<byte[]> downloadUserImage(@PathVariable Long id) {
 					Optional<UserImage> user = userImageRepository.findById(id);
 
 					if(user.isPresent()) {
