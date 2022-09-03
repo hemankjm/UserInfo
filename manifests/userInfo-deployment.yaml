@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
         - name: userinfo-backend
-          image: 811288377093.dkr.ecr.us-west-2.amazonaws.com/userinfo-backend:v4
+          image: 811288377093.dkr.ecr.us-west-2.amazonaws.com/userinfo-backend:v5
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
