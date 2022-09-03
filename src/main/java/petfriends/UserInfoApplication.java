@@ -11,7 +11,7 @@ import petfriends.config.KafkaProcessor;
 
 
 @SpringBootApplication
-// @EnableBinding(KafkaProcessor.class)
+@EnableBinding(KafkaProcessor.class)
 @EnableFeignClients
 public class UserInfoApplication {
     protected static ApplicationContext applicationContext;
